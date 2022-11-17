@@ -1,0 +1,17 @@
+________________________________________________________________________________________________________________________
+#Student 0:
+	Student ID:1234
+	Student Name:ali
+	Student Number Of Course:2
+	Student Courses:
+			%Course 0:
+				Course ID:1234
+				Course Name:aaaa
+				Course Credit:4
+				Course Score:20.0
+			%Course 1:
+				Course ID:1234
+				Course Name:aaaa
+				Course Credit:4
+				Course Score:20.0
+
