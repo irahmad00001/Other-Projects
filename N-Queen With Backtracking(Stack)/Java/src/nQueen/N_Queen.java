@@ -1,14 +1,14 @@
 package nQueen;
 
-import java.util.Arrays;
-
 public class N_Queen {
+	
 	private int number = 8;
 	public N_Queen(int n) {
 		number = n;
 	}
+	private My_Stack<Pair> stack = new My_Stack<Pair>(number);
 	
-	My_Stack<Pair> stack = new My_Stack<Pair>(number); 
+	
 	public boolean[][] backTracking(){
 		boolean[][] board =  new boolean[number][number];
 		
@@ -17,6 +17,7 @@ public class N_Queen {
 				board[i][j] = false;
 			}
 		}
+		
 		for(int i = 0 , k = 0 ; i < number ; i++) {
 			for(int j = 0 ; j < number ; j++ , k++) {
 				
@@ -33,7 +34,7 @@ public class N_Queen {
 					k = p2.secondValue;
 					j = p2.secondValue;
 					i = p2.firstValue;
-					if(j == number-1) {
+					while(j == number-1) {
 						Pair<Integer , Integer> p3 = stack.pop();
 						board[p3.firstValue][p3.secondValue] = false;
 						k = p3.secondValue;
@@ -70,12 +71,8 @@ public class N_Queen {
 	    return true;
 	}
 	public String toString() {
-		boolean[][] board =  backTracking();
-		return Arrays.deepToString(board);
-	}
-	
-	public String toBoard() {
-		boolean[][] board =  backTracking();
+		boolean[][] board = new boolean[number][number];  
+		board = backTracking();
 		String st = "";
 		for(int i = 0 ; i < number ; i++) {
 			st = st + "___";
